@@ -1,0 +1,32 @@
+[
+  {
+    "accountName":"IRA",
+    "accountNum":"5200",
+    "availableCash":"5763.36",
+    "previousCash":"8,916"
+  },
+  {
+    "accountName":"AAA",
+    "accountNum":"1812",
+    "availableCash":"5763.36",
+    "previousCash":"8,916"
+  },
+  {
+    "accountName":"AAA",
+    "accountNum":"3802",
+    "availableCash":"5763.36",
+    "previousCash":"8,916"
+  },
+  {
+    "accountName":"REG",
+    "accountNum":"2019",
+    "availableCash":"5763.36",
+    "previousCash":"8,916"
+  },
+  {
+    "accountName":"IRA",
+    "accountNum":"0146",
+    "availableCash":"5763.36",
+    "previousCash":"8,916"
+  }
+]
