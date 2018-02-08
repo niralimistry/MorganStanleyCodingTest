@@ -1,6 +1,4 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class DataService {
@@ -37,11 +35,11 @@ export class DataService {
     }
   ];
 
-  constructor(private _http: HttpClient) {}
+  constructor() {}
 
-  getAccounts(): Observable<any> {
-    return this._http.get<any>('../assets/account.json');
-  }
+  // getAccounts(): Observable<any> {
+  //   return this._http.get<any>('../assets/account.json');
+  // }
 
   getAccount(criteria: SortCriteria, loadMore): Account[] {
     let data = this.accounts.slice();

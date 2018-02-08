@@ -35,4 +35,21 @@ export class AppComponent implements OnInit {
     this.getData(this.criteria);
   }
 
+  convertString(value) {
+    return parseFloat(value);
+  }
+
+  getDifference(availableCash, previousCash) {
+    return this.convertString(availableCash.replace(',', '')) - this.convertString(previousCash.replace(',', ''));
+  }
+
+  getDifferenceClass(availableCash, previousCash) {
+    console.log(availableCash);
+    if (this.convertString(availableCash.replace(',', '')) - this.convertString(previousCash.replace(',', '')) > 0) {
+      return 'color-green';
+    } else {
+      return 'color-red';
+    }
+  }
+
 }

@@ -22,6 +22,12 @@ export class SortColumnComponent implements OnInit, OnDestroy {
   @HostListener('click')
   sort() {
     this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    // if(this.sortDirection === 'asc'){
+    //   this.sortDirection = 'desc'
+    // }
+    // else{
+    //   this.sortDirection = 'asc'
+    // }
     this.sortService.columnSorted({ sortColumn: this.columnName, sortDirection: this.sortDirection });
   }
 

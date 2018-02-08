@@ -6,15 +6,17 @@
     <th app-sort-column sortable-column="accountNum">Account</th>
     <th>Available Cash</th>
     <th>Change From Yesterday</th>
-    <th>Percentage Change</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let c of accounts">
     <td>{{c.accountName}}-{{c.accountNum}}</td>
     <td>{{c.availableCash}}</td>
-    <td>{{c.availableCash.replace(',','') - c.previousCash.replace(',','')}}</td>
-    <td>{{(c.availableCash.replace(',','') - c.previousCash.replace(',','')) * 100 / c.previousCash.replace(',','')}}</td>
+    <td>
+      <span [ngClass]="getDifferenceClass(c.availableCash, c.previousCash)">
+      {{getDifference(c.availableCash, c.previousCash)}}
+      </span>
+    </td>
   </tr>
   <tr *ngIf="!loadMore"><td colspan="4" style="text-align: center" (click)="loadMoreClick()">Load More...</td></tr>
   </tbody>

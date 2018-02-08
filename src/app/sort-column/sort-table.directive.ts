@@ -10,8 +10,7 @@ export class SortTableDirective implements OnInit, OnDestroy {
 
   constructor(private sortService: SortService) {}
 
-  @Output()
-  sorted = new EventEmitter();
+  @Output() sorted = new EventEmitter();
 
   private columnSortedSubscription: Subscription;
 
