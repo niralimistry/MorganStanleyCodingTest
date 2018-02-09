@@ -27,5 +27,8 @@ export class AmountChangeComponent implements OnInit {
     if (this.totalChange < 0) {
       this.color = 'red';
     }
+    if (this.totalChange === 0) {
+      this.color = 'gray';
+    }
   }
 }
