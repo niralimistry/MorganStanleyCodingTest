@@ -10,7 +10,7 @@ export class SortService {
 
   public columnSorted$ = this.columnSortedSource.asObservable();
 
-  columnSorted(event: ColumnSortedEvent) {
+  columnSorted(event: ColumnSortedEvent){
     this.columnSortedSource.next(event);
   }
 }

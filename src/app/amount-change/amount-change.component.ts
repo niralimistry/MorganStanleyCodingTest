@@ -3,19 +3,17 @@ import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-amount-change',
-  templateUrl: './amount-change.component.html',
-  styleUrls: ['./amount-change.component.css']
+  templateUrl: './amount-change.component.html'
 })
 export class AmountChangeComponent implements OnInit {
-  accounts: any = [];
 
-  constructor(private dataService: DataService) { }
+  constructor() { }
 
   @Input('previousCash')
-  previous: string;
+  previous: number;
 
   @Input('availableCash')
-  available: string;
+  available: number;
 
   totalChange: number;
   percentageChange: number;
@@ -23,10 +21,8 @@ export class AmountChangeComponent implements OnInit {
   @HostBinding('style.color') color = 'green';
 
   ngOnInit(): void {
-    const previous = parseFloat(this.previous.replace(',', ''));
-    const available = parseFloat(this.available.replace(',', ''));
-    this.totalChange = available - previous;
-    this.percentageChange = this.totalChange * 100 / previous;
+    this.totalChange = this.available - this.previous;
+    this.percentageChange = this.totalChange * 100 / this.previous;
     if (this.totalChange < 0) {
       this.color = 'red';
     }

@@ -1,23 +1,24 @@
 <div class="container">
   <div class="col-md-6">
-    <table class="table table-striped table-bordered text-center" appSortTable (sorted)="onSorted($event)">
-  <thead>
-  <tr>
-    <th app-sort-column ="accountNum" id="account">Account</th>
-    <th class="amountChange">Available Cash/Today`s Change</th>
-  </tr>
-  </thead>
-  <tbody>
+    <table class="table table-bordered" appSortTable (sorted)="onSorted($event)">
+      <thead>
+      <tr id="header">
+        <th app-sort-column="accountNum" id="account">Account</th>
+        <th id="amountChange">Available Cash/Today`s Change</th>
+      </tr>
+      </thead>
+      <tbody>
 
-  <tr *ngFor="let c of accounts">
-    <td id="accNum">{{c.accountName}}-{{c.accountNum}}</td>
-    <td class="amountChange">${{c.availableCash}}<br/>
-      <app-amount-change  *ngIf="c.previousCash" [availableCash]="c.availableCash" [previousCash]="c.previousCash"></app-amount-change>
-    </td>
-  </tr>
-  <tr *ngIf="!loadMore"><td colspan="2" style="text-align: center" (click)="loadMoreClick()">Load More...</td></tr>
-  </tbody>
-      </table>
+      <tr *ngFor="let c of accounts">
+        <td id="accNum">{{c.accountName}}-{{c.accountNum}}</td>
+        <td class="amountChange">${{c.availableCash}}<br/>
+          <app-amount-change *ngIf="c.previousCash" [availableCash]="c.availableCash" [previousCash]="c.previousCash"></app-amount-change>
+        </td>
+      </tr>
+      <tr id="loadMorePointer" *ngIf="!loadMore">
+        <td id="loadMoreCell" colspan="2" (click)="loadMoreClick()">Load More</td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
 

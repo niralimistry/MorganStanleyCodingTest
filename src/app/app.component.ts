@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from './services/data.service';
 import {SortCriteria} from './services/data.service';
-import {AmountChangeComponent} from "./amount-change/amount-change.component";
+import { Account } from './account';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +9,9 @@ import {AmountChangeComponent} from "./amount-change/amount-change.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  accounts: any = [];
+  accounts: Account[];
   loadMore: boolean = false;
   criteria: SortCriteria = {sortColumn: '', sortDirection: ''};
-  availableAmount: any;
-  previousAmount: any;
 
   constructor(private dataService: DataService) { }
 
@@ -27,7 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   this.getData(this.criteria);
+    this.getData(this.criteria);
   }
 
   loadMoreClick() {

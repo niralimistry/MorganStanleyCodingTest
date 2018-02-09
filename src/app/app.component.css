@@ -1,13 +1,25 @@
 #accNum{
-  color:blue;
+  color:#108FC6;
   font-weight: bold;
   text-align: left;
+  vertical-align: middle;
 }
 
 #account{
   text-align: left;
+  background-color: #F8F9F2;
 }
 
-.amountChange{
+#amountChange{
   text-align: right;
+  background-color: #EFEFED;
+}
+
+#loadMorePointer{
+  cursor: pointer;
+  color:#108FC6;
+}
+
+#loadMoreCell {
+  text-align: center;
 }

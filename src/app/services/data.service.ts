@@ -6,40 +6,36 @@ export class DataService {
     {
       'accountName': 'IRA',
       'accountNum': '5200',
-      'availableCash': '67,763.36',
-      'previousCash': '94,916.69'
+      'availableCash': 67763.36,
+      'previousCash': 94916.69
     },
     {
       'accountName': 'AAA',
       'accountNum': '1812',
-      'availableCash': '84,302.39',
-      'previousCash': '56,872.4'
+      'availableCash': 84302.39,
+      'previousCash': 56872.4
     },
     {
       'accountName': 'AAA',
       'accountNum': '3802',
-      'availableCash': '45,576.36',
-      'previousCash': '28,345'
+      'availableCash': 45576.36,
+      'previousCash': 28345
     },
     {
       'accountName': 'REG',
       'accountNum': '2019',
-      'availableCash': '34,576.36',
-      'previousCash': '77,835'
+      'availableCash': 34576.36,
+      'previousCash': 77835
     },
     {
       'accountName': 'IRA',
       'accountNum': '0146',
-      'availableCash': '90,576.36',
-      'previousCash': '55,873'
+      'availableCash': 90576.36,
+      'previousCash': 55873
     }
   ];
 
   constructor() {}
-
-  // getAccounts(): Observable<any> {
-  //   return this._http.get<any>('../assets/account.json');
-  // }
 
   getAccount(criteria: SortCriteria, loadMore): Account[] {
     let data = this.accounts.slice();
@@ -62,8 +58,8 @@ export class DataService {
 export class Account {
   accountName: string;
   accountNum: string;
-  availableCash: string;
-  previousCash: string;
+  availableCash: number;
+  previousCash: number;
 }
 
 export class SortCriteria {

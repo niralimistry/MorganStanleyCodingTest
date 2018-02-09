@@ -4,8 +4,7 @@ import {Subscription} from 'rxjs/Subscription';
 
 @Component({
   selector: '[app-sort-column]',
-  templateUrl: './sort-column.component.html',
-  styleUrls: ['./sort-column.component.css']
+  templateUrl: './sort-column.component.html'
 })
 export class SortColumnComponent implements OnInit, OnDestroy {
 
@@ -22,14 +21,7 @@ export class SortColumnComponent implements OnInit, OnDestroy {
   @HostListener('click')
   sort() {
     this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
-    // if(this.sortDirection === 'asc'){
-    //   this.sortDirection = 'desc'
-    // }
-    // else{
-    //   this.sortDirection = 'asc'
-    // }
     this.sortService.columnSorted({ sortColumn: this.columnName, sortDirection: this.sortDirection });
-    console.log(this.columnName);
   }
 
   ngOnInit() {
