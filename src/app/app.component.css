@@ -1,0 +1,13 @@
+#accNum{
+  color:blue;
+  font-weight: bold;
+  text-align: left;
+}
+
+#account{
+  text-align: left;
+}
+
+.amountChange{
+  text-align: right;
+}

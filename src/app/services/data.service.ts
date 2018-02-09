@@ -6,32 +6,32 @@ export class DataService {
     {
       'accountName': 'IRA',
       'accountNum': '5200',
-      'availableCash': '5,763.36',
-      'previousCash': '5,916.69'
+      'availableCash': '67,763.36',
+      'previousCash': '94,916.69'
     },
     {
       'accountName': 'AAA',
       'accountNum': '1812',
       'availableCash': '84,302.39',
-      'previousCash': '76,872.4'
+      'previousCash': '56,872.4'
     },
     {
       'accountName': 'AAA',
       'accountNum': '3802',
-      'availableCash': '5763.36',
-      'previousCash': '8,916'
+      'availableCash': '45,576.36',
+      'previousCash': '28,345'
     },
     {
       'accountName': 'REG',
       'accountNum': '2019',
-      'availableCash': '5763.36',
-      'previousCash': '8,916'
+      'availableCash': '34,576.36',
+      'previousCash': '77,835'
     },
     {
       'accountName': 'IRA',
       'accountNum': '0146',
-      'availableCash': '5763.36',
-      'previousCash': '8,916'
+      'availableCash': '90,576.36',
+      'previousCash': '55,873'
     }
   ];
 

@@ -1,18 +1,17 @@
 <div class="container">
   <div class="col-md-6">
-    <table class="table table-striped table-bordered text-center" appSortTable (sorted)="onSorted($event)" style="align: center">
+    <table class="table table-striped table-bordered text-center" appSortTable (sorted)="onSorted($event)">
   <thead>
   <tr>
-    <th app-sort-column ="accountNum">Account</th>
-    <th>Available Cash/Today`s Change</th>
+    <th app-sort-column ="accountNum" id="account">Account</th>
+    <th class="amountChange">Available Cash/Today`s Change</th>
   </tr>
   </thead>
   <tbody>
 
   <tr *ngFor="let c of accounts">
-    <td>{{c.accountName}}-{{c.accountNum}}</td>
-    <td>
-      {{c.availableCash}}<br/>
+    <td id="accNum">{{c.accountName}}-{{c.accountNum}}</td>
+    <td class="amountChange">${{c.availableCash}}<br/>
       <app-amount-change  *ngIf="c.previousCash" [availableCash]="c.availableCash" [previousCash]="c.previousCash"></app-amount-change>
     </td>
   </tr>

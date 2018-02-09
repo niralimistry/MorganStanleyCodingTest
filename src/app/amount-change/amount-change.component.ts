@@ -25,19 +25,10 @@ export class AmountChangeComponent implements OnInit {
   ngOnInit(): void {
     const previous = parseFloat(this.previous.replace(',', ''));
     const available = parseFloat(this.available.replace(',', ''));
-    this.totalChange = previous - available;
+    this.totalChange = available - previous;
     this.percentageChange = this.totalChange * 100 / previous;
     if (this.totalChange < 0) {
       this.color = 'red';
     }
   }
-
-  // getDifferenceClass(availableCash, previousCash) {
-  //   if (this.convertString(availableCash.replace(',', '')) - this.convertString(previousCash.replace(',', '')) > 0) {
-  //     return 'color-green';
-  //   } else {
-  //     return 'color-red';
-  //   }
-  // }
-
 }
