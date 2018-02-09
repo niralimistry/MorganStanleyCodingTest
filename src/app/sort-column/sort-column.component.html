@@ -1,3 +1,9 @@
+<span *ngIf="symbol==='before'">
+  <i class="glyphicon glyphicon-chevron-up" *ngIf="sortDirection === 'asc'" ></i>
+  <i class="glyphicon glyphicon-chevron-down" *ngIf="sortDirection === 'desc'"></i>
+</span>
 <ng-content></ng-content>
-<i class="glyphicon glyphicon-chevron-up" *ngIf="sortDirection === 'asc'" ></i>
-<i class="glyphicon glyphicon-chevron-down" *ngIf="sortDirection === 'desc'"></i>
+<span *ngIf="symbol==='after'">
+  <i class="glyphicon glyphicon-chevron-up" *ngIf="sortDirection === 'asc'" ></i>
+  <i class="glyphicon glyphicon-chevron-down" *ngIf="sortDirection === 'desc'"></i>
+</span>

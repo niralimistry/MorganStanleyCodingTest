@@ -12,6 +12,10 @@
 
 #amountChange{
   text-align: right;
+}
+
+#amountChangeHeader{
+  text-align: right;
   background-color: #EFEFED;
 }
 
@@ -22,4 +26,10 @@
 
 #loadMoreCell {
   text-align: center;
+}
+
+table {
+  background-color: white;
+  margin: 10px auto;
+  width: 50%;
 }

@@ -16,6 +16,9 @@ export class SortColumnComponent implements OnInit, OnDestroy {
   @Input('sort-direction')
   sortDirection: string = '';
 
+  @Input('symbol')
+  symbol: string = 'after';
+
   private columnSortedSubscription: Subscription;
 
   @HostListener('click')
