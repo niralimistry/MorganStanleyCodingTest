@@ -5,13 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data.service';
 import { SortColumnComponent } from './sort-column/sort-column.component';
 import { SortTableDirective } from './sort-column/sort-table.directive';
-import{SortService} from './services/sort.service';
+import {SortService} from './services/sort.service';
+import { AmountChangeComponent } from './amount-change/amount-change.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SortColumnComponent,
-    SortTableDirective
+    SortTableDirective,
+    AmountChangeComponent
   ],
   imports: [
     BrowserModule, HttpClientModule

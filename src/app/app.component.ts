@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from './services/data.service';
-import {Account} from './account';
-import {SortColumnComponent} from './sort-column/sort-column.component';
 import {SortCriteria} from './services/data.service';
+import {AmountChangeComponent} from "./amount-change/amount-change.component";
 
 @Component({
   selector: 'app-root',
@@ -13,9 +12,10 @@ export class AppComponent implements OnInit {
   accounts: any = [];
   loadMore: boolean = false;
   criteria: SortCriteria = {sortColumn: '', sortDirection: ''};
+  availableAmount: any;
+  previousAmount: any;
 
   constructor(private dataService: DataService) { }
-
 
   onSorted($event) {
     this.getData($event);
@@ -33,23 +33,6 @@ export class AppComponent implements OnInit {
   loadMoreClick() {
     this.loadMore = true;
     this.getData(this.criteria);
-  }
-
-  convertString(value) {
-    return parseFloat(value);
-  }
-
-  getDifference(availableCash, previousCash) {
-    return this.convertString(availableCash.replace(',', '')) - this.convertString(previousCash.replace(',', ''));
-  }
-
-  getDifferenceClass(availableCash, previousCash) {
-    console.log(availableCash);
-    if (this.convertString(availableCash.replace(',', '')) - this.convertString(previousCash.replace(',', '')) > 0) {
-      return 'color-green';
-    } else {
-      return 'color-red';
-    }
   }
 
 }
