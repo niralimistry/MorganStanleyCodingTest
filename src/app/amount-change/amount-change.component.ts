@@ -3,7 +3,8 @@ import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-amount-change',
-  templateUrl: './amount-change.component.html'
+  templateUrl: './amount-change.component.html',
+  styleUrls: ['./amount-change.component.scss']
 })
 export class AmountChangeComponent implements OnInit {
 

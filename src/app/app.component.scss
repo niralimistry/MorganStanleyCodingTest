@@ -1,0 +1,36 @@
+table {
+  background-color: white;
+  margin: 10px auto;
+  width: 50%;
+}
+
+.headerCol1{
+  text-align: left;
+  background-color: #F8F9F2;
+}
+
+.headerCol2{
+  text-align: right;
+  background-color: #EFEFED;
+}
+
+.tableDataCol1{
+  color:#108FC6;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.tableDataCol2{
+  text-align: right;
+}
+
+.loadMorePointer{
+  cursor: pointer;
+  color:#108FC6;
+}
+
+.loadMoreCell {
+  text-align: center;
+}
+
