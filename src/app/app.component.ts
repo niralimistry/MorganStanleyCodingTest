@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from './services/data.service';
 import {SortCriteria} from './services/data.service';
-import { Account } from './account';
+import {Account} from './account';
 
 @Component({
   selector: 'app-root',
@@ -10,27 +10,35 @@ import { Account } from './account';
 })
 export class AppComponent implements OnInit {
   accounts: Account[];
-  loadMore: boolean = false;
-  criteria: SortCriteria = {sortColumn: '', sortDirection: ''};
+  accountsToDisplay: Account[];
+  loadMore = false;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+  }
 
   onSorted($event) {
     this.getData($event);
   }
 
-  getData (criteria: SortCriteria) {
-    this.criteria = criteria;
-    this.accounts = this.dataService.getAccount(criteria, this.loadMore);
+  getData(criteria: SortCriteria) {
+    this.accounts = this.dataService.getAccount(criteria);
+    // console.log(this.accounts);
+    if (!this.loadMore) {
+      this.accountsToDisplay = this.accounts.slice(0, 3);
+    } else {
+      this.accountsToDisplay = this.accounts;
+    }
   }
 
   ngOnInit(): void {
-    this.getData(this.criteria);
+    this.getData({sortColumn: '', sortDirection: ''});
   }
 
   loadMoreClick() {
     this.loadMore = true;
-    this.getData(this.criteria);
+    this.accountsToDisplay = this.accounts;
+    // console.log(this.accounts);
   }
+
 
 }

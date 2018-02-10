@@ -2,35 +2,52 @@ table {
   background-color: white;
   margin: 10px auto;
   width: 50%;
+  table-layout: fixed;
+  border-collapse:collapse;
 }
 
-.headerCol1{
+th, td {
+  color: black;
   text-align: left;
+}
+
+.table-header {
   background-color: #F8F9F2;
+  border-right:1px solid white;
+  cursor: pointer;
+  font-weight: normal;
+
+  &.sorted {
+    background-color: #EFEFED;
+  }
 }
 
-.headerCol2{
+.text-right {
   text-align: right;
-  background-color: #EFEFED;
 }
 
-.tableDataCol1{
+
+.account-info{
   color:#108FC6;
   font-weight: bold;
-  text-align: left;
   vertical-align: middle;
+  border-right:1px solid white;
+
 }
 
-.tableDataCol2{
-  text-align: right;
-}
-
-.loadMorePointer{
+.load-more{
   cursor: pointer;
   color:#108FC6;
+  td {
+    text-align: center;
+    line-height: 37px;
+    color:#108FC6;
+  }
 }
 
-.loadMoreCell {
-  text-align: center;
+
+
+.todays-change{
+  color:dimgray;
 }
 

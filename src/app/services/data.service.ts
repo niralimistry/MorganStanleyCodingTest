@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
+import { Account } from '../account';
 
 @Injectable()
 export class DataService {
-  accounts: any = [
+  accounts: Account[] = [
     {
       'accountName': 'IRA',
       'accountNum': '5200',
@@ -44,32 +45,23 @@ export class DataService {
 
   constructor() {}
 
-  getAccount(criteria: SortCriteria, loadMore): Account[] {
+  getAccount(criteria: SortCriteria): Account[] {
     let data = this.accounts.slice();
     if (criteria.sortDirection !== '') {
+      // console.log('sorting');
       data.sort((a, b) => {
         if (criteria.sortDirection === 'desc') {
-          return a[criteria.sortColumn] < b[criteria.sortColumn];
+          return b[criteria.sortColumn] - a[criteria.sortColumn];
         } else {
-          return a[criteria.sortColumn] > b[criteria.sortColumn];
+          return a[criteria.sortColumn] - b[criteria.sortColumn];
         }
       });
-    }
-    if (!loadMore) {
-      data = data.splice(0, 3);
     }
     return data;
   }
 }
 
-export class Account {
-  accountName: string;
-  accountNum: string;
-  availableCash: number;
-  previousCash: number;
-}
-
-export class SortCriteria {
+export interface SortCriteria {
   sortColumn: string;
   sortDirection: string;
 }

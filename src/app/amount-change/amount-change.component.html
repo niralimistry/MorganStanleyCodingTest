@@ -1,3 +1,3 @@
 <div>
-  <span>{{(percentageChange/100) | percent:'1.2-2' }} / {{totalChange | currency:"USD"}}</span>
+  <span>{{(percentageChange)>0? '+' : ''}}{{percentageChange | percent:'.2' }} / {{totalChange | currency:"USD" }}</span>
 </div>

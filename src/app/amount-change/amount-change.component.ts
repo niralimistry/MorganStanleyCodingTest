@@ -10,8 +10,7 @@ export class AmountChangeComponent implements OnInit {
 
   constructor() { }
 
-  @Input('previousCash')
-  previous: number;
+  @Input() previousCash: number;
 
   @Input('availableCash')
   available: number;
@@ -22,13 +21,14 @@ export class AmountChangeComponent implements OnInit {
   @HostBinding('style.color') color = 'green';
 
   ngOnInit(): void {
-    this.totalChange = this.available - this.previous;
-    this.percentageChange = this.totalChange * 100 / this.previous;
+    this.totalChange = this.available - this.previousCash;
+    this.percentageChange = this.totalChange / this.previousCash;
     if (this.totalChange < 0) {
       this.color = 'red';
     }
     if (this.totalChange === 0) {
       this.color = 'gray';
     }
+    this.totalChange = Math.abs(this.totalChange);
   }
 }
