@@ -18,16 +18,17 @@ export class AmountChangeComponent implements OnInit {
   totalChange: number;
   percentageChange: number;
 
-  @HostBinding('style.color') color = 'green';
+  color: string;
 
   ngOnInit(): void {
     this.totalChange = this.available - this.previousCash;
     this.percentageChange = this.totalChange / this.previousCash;
     if (this.totalChange < 0) {
-      this.color = 'red';
-    }
-    if (this.totalChange === 0) {
-      this.color = 'gray';
+      this.color = 'color-red';
+    } else if (this.totalChange === 0) {
+      this.color = 'color-gray';
+    } else {
+      this.color = 'color-green';
     }
     this.totalChange = Math.abs(this.totalChange);
   }

@@ -3,19 +3,23 @@
     <thead>
     <tr>
       <th app-sort-column="accountNum" class="table-header">Account</th>
-      <th app-sort-column="availableCash" symbol="before" class="table-header text-right">Available Cash <br/><span class="todays-change">Today's Change</span></th>
+      <th app-sort-column="availableCash" symbol="before" class="table-header text-right">
+        Available Cash <br/>
+        <span class="todays-change">Today's Change</span>
+      </th>
     </tr>
     </thead>
     <tbody>
 
-    <tr *ngFor="let c of accountsToDisplay">
-      <td class="account-info">{{c.accountName}}-{{c.accountNum}}</td>
-      <td class="text-right">{{c.availableCash | currency:"USD"}}<br/>
-        <app-amount-change  [availableCash]="c.availableCash" [previousCash]="c.previousCash"></app-amount-change>
+    <tr *ngFor="let account of accountsToDisplay">
+      <td class="account-info">{{account.accountName}}-{{account.accountNum}}</td>
+      <td class="text-right">{{account.availableCash | currency:"USD"}}<br/>
+        <app-amount-change [availableCash]="account.availableCash" [previousCash]="account.previousCash"></app-amount-change>
       </td>
     </tr>
     <tr class="load-more" *ngIf="!loadMore">
-      <td colspan="2" (click)="loadMoreClick()">Load More</td></tr>
+      <td colspan="2" (click)="loadMoreClick()">Load More</td>
+    </tr>
     </tbody>
   </table>
 </div>

@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
 
   getData(criteria: SortCriteria) {
     this.accounts = this.dataService.getAccount(criteria);
-    // console.log(this.accounts);
     if (!this.loadMore) {
       this.accountsToDisplay = this.accounts.slice(0, 3);
     } else {
@@ -31,14 +30,11 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getData({sortColumn: '', sortDirection: ''});
+    this.getData({column: '', direction: ''});
   }
 
   loadMoreClick() {
     this.loadMore = true;
     this.accountsToDisplay = this.accounts;
-    // console.log(this.accounts);
   }
-
-
 }

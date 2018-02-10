@@ -27,12 +27,12 @@ export class SortColumnComponent implements OnInit, OnDestroy {
   @HostListener('click')
   sort() {
     this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
-    this.sortService.columnSorted({ sortColumn: this.columnName, sortDirection: this.sortDirection });
+    this.sortService.sortColumn({ column: this.columnName, direction: this.sortDirection });
   }
 
   ngOnInit() {
-    this.columnSortedSubscription = this.sortService.columnSorted$.subscribe(event => {
-      if (this.columnName !== event.sortColumn) {
+    this.columnSortedSubscription = this.sortService.sortColumnObservable.subscribe(event => {
+      if (this.columnName !== event.column) {
         this.sortDirection = '';
         this.isSorted = false;
       } else {

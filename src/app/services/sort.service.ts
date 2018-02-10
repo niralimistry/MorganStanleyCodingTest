@@ -7,11 +7,10 @@ export class SortService {
 
   constructor() { }
 
-  private columnSortedSource = new Subject<SortCriteria>();
+  private sortColumnSubject = new Subject<SortCriteria>();
+  public sortColumnObservable = this.sortColumnSubject.asObservable();
 
-  public columnSorted$ = this.columnSortedSource.asObservable();
-
-  columnSorted(event: SortCriteria) {
-    this.columnSortedSource.next(event);
+  sortColumn(event: SortCriteria) {
+    this.sortColumnSubject.next(event);
   }
 }

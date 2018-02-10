@@ -15,7 +15,12 @@ export class DataService {
       'accountNum': '0029',
       'availableCash': 90576.36,
       'previousCash': 55873
-
+    },
+    {
+      'accountName': 'AAA',
+      'accountNum': '0129',
+      'availableCash': 0,
+      'previousCash': 55873
     },
     {
       'accountName': 'AAA',
@@ -47,13 +52,13 @@ export class DataService {
 
   getAccount(criteria: SortCriteria): Account[] {
     let data = this.accounts.slice();
-    if (criteria.sortDirection !== '') {
+    if (criteria.direction !== '') {
       // console.log('sorting');
       data.sort((a, b) => {
-        if (criteria.sortDirection === 'desc') {
-          return b[criteria.sortColumn] - a[criteria.sortColumn];
+        if (criteria.direction === 'desc') {
+          return b[criteria.column] - a[criteria.column];
         } else {
-          return a[criteria.sortColumn] - b[criteria.sortColumn];
+          return a[criteria.column] - b[criteria.column];
         }
       });
     }
@@ -62,6 +67,6 @@ export class DataService {
 }
 
 export interface SortCriteria {
-  sortColumn: string;
-  sortDirection: string;
+  column: string;
+  direction: string;
 }
